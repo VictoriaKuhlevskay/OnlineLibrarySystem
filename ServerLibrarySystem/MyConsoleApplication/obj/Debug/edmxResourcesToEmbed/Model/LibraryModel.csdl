@@ -1,0 +1,221 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="libraryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="authors">
+    <Key>
+      <PropertyRef Name="id_author" />
+    </Key>
+    <Property Name="id_author" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="surname" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="name" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="patronymic" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="year_of_birth" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="year_of_death" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="authors_books" Relationship="Self.FK__authors_b__id_au__1920BF5C" FromRole="authors" ToRole="authors_books" />
+  </EntityType>
+  <EntityType Name="authors_books">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_author" Type="Int32" Nullable="false" />
+    <Property Name="id_book" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="authors" Relationship="Self.FK__authors_b__id_au__1920BF5C" FromRole="authors_books" ToRole="authors" />
+    <NavigationProperty Name="books" Relationship="Self.FK__authors_b__id_bo__1A14E395" FromRole="authors_books" ToRole="books" />
+  </EntityType>
+  <EntityType Name="books">
+    <Key>
+      <PropertyRef Name="id_book" />
+    </Key>
+    <Property Name="id_book" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_book" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="id_publisher" Type="Int32" Nullable="false" />
+    <Property Name="imprint_date" Type="Int32" Nullable="false" />
+    <Property Name="pages" Type="Int32" Nullable="false" />
+    <Property Name="about" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="text" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="image" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="authors_books" Relationship="Self.FK__authors_b__id_bo__1A14E395" FromRole="books" ToRole="authors_books" />
+    <NavigationProperty Name="publishers" Relationship="Self.FK__books__id_publis__164452B1" FromRole="books" ToRole="publishers" />
+    <NavigationProperty Name="download" Relationship="Self.FK__download__id_boo__239E4DCF" FromRole="books" ToRole="download" />
+    <NavigationProperty Name="genres_books" Relationship="Self.FK__genres_bo__id_bo__1DE57479" FromRole="books" ToRole="genres_books" />
+  </EntityType>
+  <EntityType Name="download">
+    <Key>
+      <PropertyRef Name="id_download" />
+    </Key>
+    <Property Name="id_download" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_user" Type="Int32" Nullable="false" />
+    <Property Name="id_book" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="books" Relationship="Self.FK__download__id_boo__239E4DCF" FromRole="download" ToRole="books" />
+    <NavigationProperty Name="users" Relationship="Self.FK__download__id_use__22AA2996" FromRole="download" ToRole="users" />
+  </EntityType>
+  <EntityType Name="genres">
+    <Key>
+      <PropertyRef Name="id_genre" />
+    </Key>
+    <Property Name="id_genre" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_genre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="genres_books" Relationship="Self.FK__genres_bo__id_ge__1CF15040" FromRole="genres" ToRole="genres_books" />
+  </EntityType>
+  <EntityType Name="genres_books">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="id_genre" Type="Int32" Nullable="false" />
+    <Property Name="id_book" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="books" Relationship="Self.FK__genres_bo__id_bo__1DE57479" FromRole="genres_books" ToRole="books" />
+    <NavigationProperty Name="genres" Relationship="Self.FK__genres_bo__id_ge__1CF15040" FromRole="genres_books" ToRole="genres" />
+  </EntityType>
+  <EntityType Name="publishers">
+    <Key>
+      <PropertyRef Name="id_publisher" />
+    </Key>
+    <Property Name="id_publisher" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name_publisher" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="books" Relationship="Self.FK__books__id_publis__164452B1" FromRole="publishers" ToRole="books" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="id_user" />
+    </Key>
+    <Property Name="id_user" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="download" Relationship="Self.FK__download__id_use__22AA2996" FromRole="users" ToRole="download" />
+  </EntityType>
+  <Association Name="FK__authors_b__id_au__1920BF5C">
+    <End Role="authors" Type="Self.authors" Multiplicity="1" />
+    <End Role="authors_books" Type="Self.authors_books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="authors">
+        <PropertyRef Name="id_author" />
+      </Principal>
+      <Dependent Role="authors_books">
+        <PropertyRef Name="id_author" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__authors_b__id_bo__1A14E395">
+    <End Role="books" Type="Self.books" Multiplicity="1" />
+    <End Role="authors_books" Type="Self.authors_books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id_book" />
+      </Principal>
+      <Dependent Role="authors_books">
+        <PropertyRef Name="id_book" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__books__id_publis__164452B1">
+    <End Role="publishers" Type="Self.publishers" Multiplicity="1" />
+    <End Role="books" Type="Self.books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="publishers">
+        <PropertyRef Name="id_publisher" />
+      </Principal>
+      <Dependent Role="books">
+        <PropertyRef Name="id_publisher" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__download__id_boo__239E4DCF">
+    <End Role="books" Type="Self.books" Multiplicity="1" />
+    <End Role="download" Type="Self.download" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id_book" />
+      </Principal>
+      <Dependent Role="download">
+        <PropertyRef Name="id_book" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__genres_bo__id_bo__1DE57479">
+    <End Role="books" Type="Self.books" Multiplicity="1" />
+    <End Role="genres_books" Type="Self.genres_books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="books">
+        <PropertyRef Name="id_book" />
+      </Principal>
+      <Dependent Role="genres_books">
+        <PropertyRef Name="id_book" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__download__id_use__22AA2996">
+    <End Role="users" Type="Self.users" Multiplicity="1" />
+    <End Role="download" Type="Self.download" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="users">
+        <PropertyRef Name="id_user" />
+      </Principal>
+      <Dependent Role="download">
+        <PropertyRef Name="id_user" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__genres_bo__id_ge__1CF15040">
+    <End Role="genres" Type="Self.genres" Multiplicity="1" />
+    <End Role="genres_books" Type="Self.genres_books" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="genres">
+        <PropertyRef Name="id_genre" />
+      </Principal>
+      <Dependent Role="genres_books">
+        <PropertyRef Name="id_genre" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="libraryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="authors" EntityType="Self.authors" />
+    <EntitySet Name="authors_books" EntityType="Self.authors_books" />
+    <EntitySet Name="books" EntityType="Self.books" />
+    <EntitySet Name="download" EntityType="Self.download" />
+    <EntitySet Name="genres" EntityType="Self.genres" />
+    <EntitySet Name="genres_books" EntityType="Self.genres_books" />
+    <EntitySet Name="publishers" EntityType="Self.publishers" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="users" EntityType="Self.users" />
+    <AssociationSet Name="FK__authors_b__id_au__1920BF5C" Association="Self.FK__authors_b__id_au__1920BF5C">
+      <End Role="authors" EntitySet="authors" />
+      <End Role="authors_books" EntitySet="authors_books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__authors_b__id_bo__1A14E395" Association="Self.FK__authors_b__id_bo__1A14E395">
+      <End Role="books" EntitySet="books" />
+      <End Role="authors_books" EntitySet="authors_books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__books__id_publis__164452B1" Association="Self.FK__books__id_publis__164452B1">
+      <End Role="publishers" EntitySet="publishers" />
+      <End Role="books" EntitySet="books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__download__id_boo__239E4DCF" Association="Self.FK__download__id_boo__239E4DCF">
+      <End Role="books" EntitySet="books" />
+      <End Role="download" EntitySet="download" />
+    </AssociationSet>
+    <AssociationSet Name="FK__genres_bo__id_bo__1DE57479" Association="Self.FK__genres_bo__id_bo__1DE57479">
+      <End Role="books" EntitySet="books" />
+      <End Role="genres_books" EntitySet="genres_books" />
+    </AssociationSet>
+    <AssociationSet Name="FK__download__id_use__22AA2996" Association="Self.FK__download__id_use__22AA2996">
+      <End Role="users" EntitySet="users" />
+      <End Role="download" EntitySet="download" />
+    </AssociationSet>
+    <AssociationSet Name="FK__genres_bo__id_ge__1CF15040" Association="Self.FK__genres_bo__id_ge__1CF15040">
+      <End Role="genres" EntitySet="genres" />
+      <End Role="genres_books" EntitySet="genres_books" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

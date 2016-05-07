@@ -1,0 +1,13 @@
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\bin\Debug\winformAdminLibrarySystem.exe
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\bin\Debug\winformAdminLibrarySystem.exe.config
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.Author.resources
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.Book.resources
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.Genre.resources
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.Publisher.resources
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.MainForm.resources
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.Properties.Resources.resources
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.csproj.GenerateResource.Cache
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.exe
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.pdb
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\bin\Debug\winformAdminLibrarySystem.pdb
+D:\Учёба\8 сем\курсач\КП\new\winformAdminLibrarySystem\winformAdminLibrarySystem\obj\Debug\winformAdminLibrarySystem.csprojResolveAssemblyReference.cache

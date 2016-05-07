@@ -1,0 +1,6 @@
+D:\Учёба\8 сем\курсач\КП\new\Example\Example\obj\Debug\Example.csprojResolveAssemblyReference.cache
+D:\Учёба\8 сем\курсач\КП\new\Example\Example\bin\Debug\Example.dll.config
+D:\Учёба\8 сем\курсач\КП\new\Example\Example\bin\Debug\Example.dll
+D:\Учёба\8 сем\курсач\КП\new\Example\Example\bin\Debug\Example.pdb
+D:\Учёба\8 сем\курсач\КП\new\Example\Example\obj\Debug\Example.dll
+D:\Учёба\8 сем\курсач\КП\new\Example\Example\obj\Debug\Example.pdb

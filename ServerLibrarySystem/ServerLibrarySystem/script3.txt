@@ -1,0 +1,25 @@
+﻿SELECT
+     b.id_book as 'ID', b.name_book as 'Название книги',
+     STUFF(
+         (SELECT ', ' + g.name_genre 
+          FROM books
+		  INNER JOIN genres_books AS gb
+		      ON b.id_book=gb.id_book
+		  INNER JOIN genres AS g
+		      ON gb.id_genre=g.id_genre
+          WHERE books.id_book = b.id_book
+          FOR XML PATH (''))
+          , 1, 1, '') as 'Жанр',
+	 STUFF(
+         (SELECT ', ' + a.surname + ' ' + a.name
+          FROM books 
+		  INNER JOIN authors_books AS ab
+		      ON b.id_book=ab.id_book
+		  INNER JOIN authors AS a
+		      ON ab.id_author=a.id_author
+          WHERE books.id_book = b.id_book
+          FOR XML PATH (''))
+          , 1, 1, '') as 'Автор',
+	 p.name_publisher as 'Издательство', b.imprint_date as 'Дата издания', b.pages as 'Количество страниц', b.about as 'Описание', b.text as 'Текст', b.image as 'Обложка'
+FROM books AS b, publishers AS p, genres_books AS gb
+WHERE (b.id_publisher=p.id_publisher AND (b.id_book=gb.id_book AND gb.id_genre=

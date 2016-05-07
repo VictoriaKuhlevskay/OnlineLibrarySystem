@@ -1,0 +1,329 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26.04.2016, 19:17:35
+    Author     : master
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    min-height: 100%;
+    width: 100%;
+}
+
+#top {
+    position: relative;
+    height: 260px;
+    width: 100%;
+    background: url(../images/top2.jpg);
+}
+
+#text {
+    position: absolute;
+    width: 26%;
+    color: white;
+    padding-top: 30px;
+    padding-left: 25px;
+}
+
+#text p {
+    font-style: italic;
+    font-size: 18px;
+}
+
+#head {
+    width: 45%;
+    color: white;
+    padding-top: 120px;
+    padding-left: 410px;
+}
+
+#head p {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#link {
+    color: white;
+    padding-top: 15px;
+    padding-left: 475px;
+}
+
+#link a{
+    color: white;
+    font-size: 20px;
+    margin-left: 30px;
+    text-decoration: none;
+}
+
+#link a:hover {
+    color: #cc0066;
+}
+
+#enterDiv {
+    /* width: 12%; */
+    color: white;
+    float: right;
+    margin-top: 20px;
+    margin-right: 50px;
+}
+
+#enterDiv a {
+    color: white;
+    padding-left: 70px;
+    /* padding-bottom: 10px; */
+}
+
+#search {
+    width: 30%;
+    position: absolute;
+    padding-left: 515px;
+    padding-top: 20px;
+}
+
+#search input[type='text'] {
+    width: 350px;
+    height: 30px;
+    border: none;
+    padding-left: 7px;
+}
+
+#search input[type='submit'] {
+    width: 26px;
+    height: 100%;
+    background: url(../images/search.png) no-repeat left 3px;
+    padding: 0;
+    border: none;
+    position: absolute;
+    right: 12px;
+    text-indent: 9000px;
+    overflow: hidden;
+    margin-right: 45px;
+    cursor: pointer;
+}
+
+#middle {
+    position: relative;
+    min-height: 100%;
+    width: 100%;
+    background: rgba(239, 238, 238, 0.48);
+}
+
+#bottom {
+    clear: left;
+    /* position: static; */
+    /* margin-top: 60%; */
+    height: 35px;
+    width: 100%;
+    background: url(../images/bottom.jpg);
+}
+
+#bottom p {
+    text-align: right;
+    padding-top: 10px;
+    padding-right: 50px;
+    color: white;
+}
+
+#dialog{
+    margin-top: 8px;
+    width: 200px;
+    height: 120px;
+    background: rgba(226, 122, 198, 0.31);
+}
+#dialog p {
+    position: absolute;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+#dialog input[type='text'] {width: 110px;margin-left: 70px;margin-top: 10px;}
+#dialog input[type='password'] {width: 110px;margin-left: 70px;margin-top: 10px;}
+#dialog a {
+    padding-left: 100px;
+    margin-top: 13px;
+    position: absolute;
+}
+
+#dialog a {
+    
+}
+#dialog input[type='submit'] {margin-left: 10px;margin-top: 10px;margin-right: 15px;width: 70px;height: 25px;border: none;cursor: pointer;color: white;background: #cc0066;position: absolute;}
+
+#genreDiv {padding-top: 30px;padding-left: 15px;width: 8%;/* background: rgba(239, 238, 238, 0.48); */height: 100%;float: left;/* position: relative; */}
+
+#genreDiv a{
+    font-size: 17px;
+    line-height: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+#genreDiv a:hover {
+    color: #cc0066;
+}
+
+#bookDiv {
+    background: rgba(239, 238, 238, 0.63);
+    padding-top: 25px;
+    width: 77%;
+    /* position: relative; */
+    float: left;
+    /* padding-left: 13%; */
+}
+
+#bookDiv table {
+    width: 600px;
+    padding-left: 10px;
+}
+
+#bookDiv h1{
+    width: 200px;
+    font-size: 17px;
+}
+
+#bookDiv p{
+    width: 200px;
+    font-size: 15px;
+    line-height: 18px;
+}
+
+#bookDiv input[type='submit']{
+    width: 100px;
+    height: 25px;
+    background: rgba(78, 132, 21, 0.89);
+    color: white;
+    border: double;
+}
+
+#bookDiv table tr{
+    /* width: 3000px; */
+}
+
+#bookDiv table td{
+    /* width: 70px; */
+    /* padding-left: 10px; */
+}
+
+#authorDiv {
+    padding-top: 30px;
+    /* min-height: 100%; */
+    float: left;
+    padding-left: 15px;
+    width: 11.5%;
+    /* background: rgba(239, 238, 238, 0.48); */
+    }
+
+
+
+#authorDiv a{
+    font-size: 17px;
+    line-height: 40px;
+    text-decoration: none;
+    color: black;
+}
+
+#authorDiv a:hover {
+    color: #cc0066;
+}
+
+#authorDiv {
+    display: block;
+}
+
+#genreDiv {
+    display: block;
+}
+
+#bookDiv {
+    display: block;
+}
+
+#welcome {
+    background: #FDFDFD;
+}
+
+#welcome h1 {
+    text-align: center;
+    padding-top: 20px;
+    /* font-family: Segoe Print; */
+    font-size: 30px;
+    font-weight: bold;
+    color: #5F051D;
+    font-size: x-large;
+}
+
+#welcome p {
+    text-align: center;
+    padding-top: 15px;
+    font-size: larger;
+}
+
+#welcome img {
+    width: 380px;
+}
+
+#head a {
+    text-decoration: none;
+}
+
+#head a:hover {
+    color: #cc0066;
+}
+
+#head a:visited {
+    color: white;
+}
+
+#genreDiv input[type='submit']{
+    width: 100px;
+    height: 30px;
+    margin-bottom: 15px;
+    font-family: serif;
+    font-size: 17px;
+    background: rgba(47, 40, 40, 0.85);
+    color: white;
+    border: double;
+}
+
+#authorDiv input[type='submit']{
+    width: 170px;
+    height: 30px;
+    margin-bottom: 15px;
+    font-family: serif;
+    font-size: 17px;
+    background: rgba(47, 40, 40, 0.85);
+    color: white;
+    border: double;
+}
+
+#reg {
+    padding-top: 40px;
+    height: 340px;
+    padding-left: 515px;
+}
+
+#reg  input[type='text']{width: 200px;height: 30px;margin-bottom: 20px;margin-left: 20px;padding-left: 7px;/* margin-right: 200px; */}
+#reg  input[type='password']{width: 200px;height: 30px;margin-bottom: 20px;margin-left: 20px;padding-left: 7px;/* margin-right: 200px; */}
+#reg  input[type='submit']{
+    width: 200px;
+    height: 30px;
+    font-size: 17px;
+    font-family: serif;
+    color: white;
+    background: rgba(78, 132, 21, 0.89);
+    border: double;
+}
+
+#reg p {
+    font-size: 16px;
+    /* width: 0px; */
+    margin-right: 20px;
+}

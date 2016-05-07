@@ -1,0 +1,16 @@
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\bin\Debug\MyConsoleApplication.exe.config
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\bin\Debug\MyConsoleApplication.exe
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\bin\Debug\MyConsoleApplication.pdb
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\obj\Debug\MyConsoleApplication.exe
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\obj\Debug\MyConsoleApplication.pdb
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\bin\Debug\EntityFramework.dll
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\bin\Debug\EntityFramework.xml
+D:\Учёба\8 сем\курсач\КП\new\Example\MyConsoleApplication\obj\Debug\MyConsoleApplication.csprojResolveAssemblyReference.cache
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\bin\Debug\MyConsoleApplication.exe.config
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\obj\Debug\MyConsoleApplication.exe
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\obj\Debug\MyConsoleApplication.pdb
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\bin\Debug\MyConsoleApplication.exe
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\bin\Debug\MyConsoleApplication.pdb
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\bin\Debug\EntityFramework.dll
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\bin\Debug\EntityFramework.xml
+D:\Учёба\8 сем\курсач\КП\new\ServerLibrarySystem\MyConsoleApplication\obj\Debug\MyConsoleApplication.csprojResolveAssemblyReference.cache

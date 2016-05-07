@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MyConsoleApplication.Model" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MyConsoleApplication.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfpublishers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="publishers" nillable="true" type="tns:publishers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfpublishers" nillable="true" type="tns:ArrayOfpublishers" />
+  <xs:complexType name="publishers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="books" nillable="true" type="tns:ArrayOfbooks" />
+      <xs:element minOccurs="0" name="id_publisher" type="xs:int" />
+      <xs:element minOccurs="0" name="name_publisher" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="publishers" nillable="true" type="tns:publishers" />
+  <xs:complexType name="ArrayOfbooks">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="books" nillable="true" type="tns:books" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfbooks" nillable="true" type="tns:ArrayOfbooks" />
+  <xs:complexType name="books">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="about" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="authors_books" nillable="true" type="tns:ArrayOfauthors_books" />
+      <xs:element minOccurs="0" name="download" nillable="true" type="tns:ArrayOfdownload" />
+      <xs:element minOccurs="0" name="genres_books" nillable="true" type="tns:ArrayOfgenres_books" />
+      <xs:element minOccurs="0" name="id_book" type="xs:int" />
+      <xs:element minOccurs="0" name="id_publisher" type="xs:int" />
+      <xs:element minOccurs="0" name="image" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="imprint_date" type="xs:int" />
+      <xs:element minOccurs="0" name="name_book" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pages" type="xs:int" />
+      <xs:element minOccurs="0" name="publishers" nillable="true" type="tns:publishers" />
+      <xs:element minOccurs="0" name="text" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="books" nillable="true" type="tns:books" />
+  <xs:complexType name="ArrayOfauthors_books">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="authors_books" nillable="true" type="tns:authors_books" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfauthors_books" nillable="true" type="tns:ArrayOfauthors_books" />
+  <xs:complexType name="authors_books">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authors" nillable="true" type="tns:authors" />
+      <xs:element minOccurs="0" name="books" nillable="true" type="tns:books" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_author" type="xs:int" />
+      <xs:element minOccurs="0" name="id_book" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="authors_books" nillable="true" type="tns:authors_books" />
+  <xs:complexType name="authors">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="authors_books" nillable="true" type="tns:ArrayOfauthors_books" />
+      <xs:element minOccurs="0" name="id_author" type="xs:int" />
+      <xs:element minOccurs="0" name="name" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="patronymic" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="surname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="year_of_birth" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="year_of_death" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="authors" nillable="true" type="tns:authors" />
+  <xs:complexType name="ArrayOfdownload">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="download" nillable="true" type="tns:download" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfdownload" nillable="true" type="tns:ArrayOfdownload" />
+  <xs:complexType name="download">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="books" nillable="true" type="tns:books" />
+      <xs:element minOccurs="0" name="id_book" type="xs:int" />
+      <xs:element minOccurs="0" name="id_download" type="xs:int" />
+      <xs:element minOccurs="0" name="id_user" type="xs:int" />
+      <xs:element minOccurs="0" name="users" nillable="true" type="tns:users" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="download" nillable="true" type="tns:download" />
+  <xs:complexType name="users">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="download" nillable="true" type="tns:ArrayOfdownload" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id_user" type="xs:int" />
+      <xs:element minOccurs="0" name="login" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="users" nillable="true" type="tns:users" />
+  <xs:complexType name="ArrayOfgenres_books">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="genres_books" nillable="true" type="tns:genres_books" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfgenres_books" nillable="true" type="tns:ArrayOfgenres_books" />
+  <xs:complexType name="genres_books">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="books" nillable="true" type="tns:books" />
+      <xs:element minOccurs="0" name="genres" nillable="true" type="tns:genres" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="id_book" type="xs:int" />
+      <xs:element minOccurs="0" name="id_genre" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="genres_books" nillable="true" type="tns:genres_books" />
+  <xs:complexType name="genres">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="genres_books" nillable="true" type="tns:ArrayOfgenres_books" />
+      <xs:element minOccurs="0" name="id_genre" type="xs:int" />
+      <xs:element minOccurs="0" name="name_genre" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="genres" nillable="true" type="tns:genres" />
+  <xs:complexType name="ArrayOfauthors">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="authors" nillable="true" type="tns:authors" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfauthors" nillable="true" type="tns:ArrayOfauthors" />
+  <xs:complexType name="ArrayOfgenres">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="genres" nillable="true" type="tns:genres" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfgenres" nillable="true" type="tns:ArrayOfgenres" />
+</xs:schema>

@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Restaurant</title>
+        <script language="javascript" src="js/jquery-1.10.2.js"></script>
+        <script language="javascript" src="js/function.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+    </head>
+
+    <body>
+        <div id="container">
+            <div id="column1">
+                <div id="logotip"></div>
+                <div id="clearer"></div>
+                <div id="menu" align="right">
+                    <ul id="nav">
+                        <li id="mainpage"><a><b>Главная</b></a></li>
+                        <li id="menupage"><a><b>Меню</b></a></li>
+                        <li id="tablepage"><a><b>Столики</b></a></li>
+                        <li id="basketpage"><a><b>Корзина</b></a></li>
+                        <li id="posterpage"><a><b>Афиша</b></a></li>
+                        <li id="contactpage"><a><b>Контакты</b></a></li>                        
+                        <li id="orderpage"><a><b>Оформить заказ</b></a></li>
+                    </ul>   
+                </div>
+            </div>
+
+            <div id="mainpage">
+                <div id="column2">
+                    <div class="welcome">
+                        <ul type="circle">
+                            <li><p>Для клиентов ресторанов существует
+                                    очевидная проблема: теряется много времени с момента прибытия в ресторан 
+                                    до момента подачи заказа. Предлагаемое решение — 
+                                    <b>предварительный заказ блюд и столиков в ресторане.<br><br></b></p>
+                            </li>
+                            <li><p>Это решение идеально подходит для активных молодых представителей 
+                                    среднего класса, деловых людей, экономящих свое время, чтобы не 
+                                    ожидать понапрасну, и в то же время предпочитающих ужин в ресторане,
+                                    а не в фастфуде.<br><br></p>
+                            </li>
+                            <li><p>Мы стремимся сделать процесс обслуживания в нашем ресторане
+                                    максимально быстрым и комфортным для наших клиентов.<br></p>                                
+                            </li>
+                            <li><p><b>Ресторан-</b><font size="+3">online </font><font size="+4">Sharmi</font> – 
+                                    оснащен службой предварительного заказа блюд и столиков в нашем
+                                    ресторане прямо из дома! Мы стараемся предоставить нашим клиентам 
+                                    максимально широкий ассортимент, чтобы удовлетворить Вас как по
+                                    уровню цен, так и по качеству предлагаемых блюд.</p>
+                            </li>
+                        </ul>
+                        <p align ="center"><img src=images/restaurant.png width="190"></p>
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r10.jpg></div>
+            </div>
+
+            <div id="menupage">
+                <div id="column2">
+                    <div class="welcome">
+                        <p><font size="+4"><b>Меню</b><br><br></font></p>
+                        <section class="main"><p align="center">Виды блюд</p>                      
+                            <div id="dd" class="wrapper-dropdown-2" tabindex="1">                                
+                                <ul class="dropdown" id="list">
+                                    <li id="1"><i><a href class="add"><img src=images/icon/1.jpg>Холодные закуски</a></i></li>
+                                    <li id="2"><i class="icon"><a href class="add"><img src=images/icon/2.jpg>Салат</a></i></li>
+                                    <li id="3"><i class="icon"><a href class="add"><img src=images/icon/3.jpg>Первые блюда</a></i></li>
+                                    <li id="4"><i class="icon"><a href class="add"><img src=images/icon/4.jpg>Гарниры</a></i></li>
+                                    <li id="5"><i class="icon"><a href class="add"><img src=images/icon/5.jpg>Блюда из мяса</a></i></li>
+                                    <li id="6"><i class="icon"><a href class="add"><img src=images/icon/6.jpg>Десерты</a></i></li>
+                                    <li id="7"><i class="icon"><a href class="add"><img src=images/icon/7.jpg>Горячие напитки</a></i></li>
+                                    <li id="8"><i class="icon"><a href class="add"><img src=images/icon/8.jpg>Безалкогольные напитки</a></i></li>
+                                    <li id="9"><i class="icon"><a href class="add"><img src=images/icon/9.jpg>Спиртные напитки</a></i></li>  
+                                    <li id="10"><i><a href class="add">Всё меню</a></i></li> 
+                                </ul>
+                            </div> 
+                            <a href="#" onclick="sort()"><i>по цене</i></a>
+                        </section>
+                        <div id="menu1" ></div>                        
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r15.jpg></div>
+            </div>
+
+            <div id="tablepage">
+                <div id="column2">
+                    <div class="welcome">
+                        <img src="images/table.png">
+                        <table id="qwe" width="450">
+                            <tr>
+                                <td width = "450" align = right>                                    
+                                    <p><font color = "#862909" face="brush script mt" size = "+1"><i>Выберите дату посещения нашего ресторана:</i></font></p>
+                                    Дата: <input type="date" max="2015-12-20" id="davaToday" name="datamine">
+                                    <script>
+                                        document.getElementById('davaToday').valueAsDate = new Date();
+                                    </script>
+                                    Время: <input type="time" min="10:00:00" max="21:59:00" id="time" name="time" value="10:00:00">
+                                    <br><br>
+                                    <button type="button" id="day"><i>Проверить столики</i></button>
+                                    <br><br><br>
+                                    <div id="kalend" ></div>
+                                    <br>
+                                    <br><br><br>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r16.jpg></div>
+            </div>
+            
+            <div id="okpage">
+                <div id="column2">
+                   <br><br><br><br><br>   
+                <p align="center"><font color = "#862909" face="sans-serif" size = "+3"><i><b>Столик зарезервирован!</b></i></font></p>
+                <br><br><br><br><br>                     
+                </div>                    
+                <div id="column3"><img src=images/r16.jpg></div>
+            </div>
+            
+            
+            <div id="okorder">
+                <div id="column2">
+                    <br><br><br><br><br>   
+                    <p align="center"><font color = "#862909" face="sans-serif" size = "+3"><i><b>Заказ успешно сформирован!<br><br><br>Спасибо, что воспользовались нашими услугами!</b></i></font></p>
+                    <br><br><br><br><br>
+                </div>                    
+                <div id="column3"><img src=images/r16.jpg></div>
+            </div>
+                        
+            <div id="orderpage">
+                <div id="column2">
+                    <div class="welcome">
+                        <p><font size="+4"><b>Оформление заказа</b></font></p>
+                        <br>
+                        <table width="450">
+                            <tr>
+                                <td width = "200" align = right>
+                                        <p><font color = "#862909" face="brush script mt" size = "+1"><i>Введите свои данные:</i></font></p><br><br>
+                                        Фамилия <input type="text" name="surname"><br><br>
+                                        Имя <input type="text" name="name"><br><br>
+                                        Отчество <input type="text" name="patr"><br><br>
+                                        Телефон <input type="text" name="tel"><br><br>                                    
+                                        <p align = right><button type="button" onclick="ok()">Оформить</button></p>
+                                    <br><br><br>
+                                </td>
+                                <td width = "250" align = center><img src = "images/of2.png" width = "200" ></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r13.jpg></div>
+            </div>
+            
+            <div id="basketpage">                
+                <div id="column2">
+                    <div class="welcome">
+                        <p><font size="+4"><b>Корзина</b></font></p>                        
+                        <br>
+                        <div id="basket2" ></div> 
+                        <div id="basket1" ></div>  
+                        <div id="basket3" ></div>
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r11.jpg></div>
+            </div>
+
+            <div id="posterpage">
+                <div id="column2">
+                    <div class="welcome">
+                        <table class="" width="480">                      
+                            <tr>
+                                <td width="400" align="center"><br><img src="images/menu/31.jpg" width="350" ><br><br></td>                                
+                            </tr>
+                            <tr>
+                                <td width="300" align="center">
+                                    <p>Специально к зимней погоде шеф-повар нашего ресторана добавил новый 
+                                        напиток в меню.<br><font color="#930d0d"><b>Горячий шоколад с зефирками.</b></font>
+                                        <br>Этот "уютный" напиток, дополненный изысканными специями, прибавит сил после трудного рабочего дня.
+                                    </p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="400" align="center"><br>* * *<br></td>                                
+                            </tr>
+                            <tr>
+                                <td width="400" align="center"><br><img src="images/newyear.jpg" width="350" ><br><br></td>
+                            </tr>
+                            <tr>
+                                <td width="300" align="center">
+                                    <p>Каждый четверг в 20:00 приглашаем Вас почувствовать прелесть живой 
+                                        музыки и провести холодный зимний вечер в уютной предновогодней атмосфере.</p>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r9.jpg></div>
+            </div>
+                
+            <div id="contactpage">
+                <div id="column2">
+                    <div class="welcome">
+                        <br><br><br>
+                        <p>Республика Беларусь, 220125, г. Минск, 
+                            пр.Независимости, XXX, офис XX<br>
+                            <br>
+                            Ресторан:<br>
+                            (+375 17) XXX-XX-XX<br>
+                            (+375 29) XXX-XX-XX<br>
+                            <br>
+                            Организация мероприятий:<br>
+                            (+375 17) XXX-XX-XX<br>
+                            <br>
+                            Отдел кадров:<br>
+                            +375 (17) XXX-XX-XX<br>
+                        </p>
+                    </div>
+                </div>                    
+                <div id="column3"><img src=images/r12.jpg></div>
+            </div>
+                
+        </div>
+            
+            
+        <script> 
+
+    $(document).ready(function() {
+        $("div#mainpage").show();
+        $("div#menupage").hide();
+        $("div#tablepage").hide();
+        $("div#basketpage").hide();
+        $("div#posterpage").hide();
+        $("div#contactpage").hide();
+        $("div#orderpage").hide();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+    });
+            
+    $("li#mainpage").on("click",function() {
+        $("div#mainpage").show();
+        $("div#menupage").hide();
+        $("div#tablepage").hide();
+        $("div#basketpage").hide();
+        $("div#posterpage").hide();
+        $("div#contactpage").hide();   
+        $("div#orderpage").hide();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+    });
+
+    $("li#menupage").on("click",function() {
+        $("div#mainpage").hide();
+        $("div#menupage").show();
+        $("div#tablepage").hide();
+        $("div#basketpage").hide();
+        $("div#posterpage").hide();
+        $("div#contactpage").hide(); 
+        $("div#orderpage").hide();
+        $("div#menu1").empty();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+        menu();
+    });
+            
+    $("li#tablepage").on("click",function() {
+        $("div#mainpage").hide();
+        $("div#menupage").hide();
+        $("div#tablepage").show();
+        $("div#basketpage").hide();
+        $("div#posterpage").hide();
+        $("div#contactpage").hide(); 
+        $("div#orderpage").hide();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+        $("div#kalend").empty();
+    });
+
+    $("li#basketpage").on("click",function() {
+        $("div#mainpage").hide();
+        $("div#menupage").hide();
+        $("div#tablepage").hide();
+        $("div#basketpage").show();
+        $("div#posterpage").hide();
+        $("div#contactpage").hide(); 
+        $("div#orderpage").hide();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+        $("div#basket2").empty();
+        $("div#basket1").empty();
+        $("div#basket3").empty();
+        showbask();
+        idBask();
+    });
+
+    $("li#posterpage").on("click",function() {
+        $("div#mainpage").hide();
+        $("div#menupage").hide();
+        $("div#tablepage").hide();
+        $("div#basketpage").hide();
+        $("div#posterpage").show();
+        $("div#contactpage").hide(); 
+        $("div#orderpage").hide();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+    });           
+            
+    $("li#contactpage").on("click",function() {
+        $("div#mainpage").hide();
+        $("div#menupage").hide();
+        $("div#tablepage").hide();
+        $("div#basketpage").hide();
+        $("div#posterpage").hide();
+        $("div#contactpage").show();
+        $("div#orderpage").hide();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+    }); 
+
+    $("li#orderpage").on("click",function() {
+        $("div#mainpage").hide();
+        $("div#menupage").hide();
+        $("div#tablepage").hide();
+        $("div#basketpage").hide();
+        $("div#posterpage").hide();
+        $("div#contactpage").hide();
+        $("div#orderpage").show();
+        $("div#okpage").hide();
+        $("div#okorder").hide();
+    }); 
+
+    var rootURL = 'http://localhost:8084/WebServerRest/webresources/service';
+    var idOrder;
+    var sum;
+    var idT;
+    var date;
+    var time;
+    
+    var menu = function ViewMenu() {
+        $(function(){ 
+            $.getJSON(rootURL + '/getmenu', function(data) {
+                $("div#menu1").empty();
+                $("div#menu1").append('<table width="450">');
+                for(var i = 0; i < data.length; i++){
+                    $("div#menu1").append('<tr><td valign="middle" width="200"><img src="' + data[i].image + '" width="190"></td><br><td valign="middle" width="200"><p><i>' + data[i].food +
+                            '</i><br><br>' + data[i].dose + '<br>' + data[i].cost + ' руб.<br><br>' +
+                            data[i].consist + '</p></td><td valign="middle" width="50"><input type="text" name="' 
+                            + data[i].idFood + '" size="3">шт.<br><a href="#"><input type="image" src="images/bask.png" onclick="add(' 
+                            + data[i].idFood + ')" width="45"></a></td></tr><tr><td valign="middle" width="450"><p align="center">*  *  *  *  *</p></td></tr>');
+                }
+                $("div#menu1").append('</table>');
+            });
+        });
+    };   
+    
+    var sort = function Sort() {
+        $(function(){ 
+            $.getJSON(rootURL + '/sort', function(data) {
+                $("div#menu1").empty();
+                $("div#menu1").append('<table width="450">');
+                for(var i = 0; i < data.length; i++){
+                    $("div#menu1").append('<tr><td valign="middle" width="200"><img src="' + data[i].image + '" width="190"></td><br><td valign="middle" width="200"><p><i>' + data[i].food +
+                            '</i><br><br>' + data[i].dose + '<br>' + data[i].cost + ' руб.<br><br>' +
+                            data[i].consist + '</p></td><td valign="middle" width="50"><input type="text" name="' 
+                            + data[i].idFood + '" size="3">шт.<br><a href="#"><input type="image" src="images/bask.png" onclick="add(' 
+                            + data[i].idFood + ')" width="45"></a></td></tr><tr><td valign="middle" width="450"><p>*  *  *  *  *</p></td></tr>');
+                }
+                $("div#menu1").append('</table>');
+            });
+        });
+    };
+            
+    $("li#1").click(function(e) { viewkind("1"); e.preventDefault(); });     
+    $("li#2").click(function(e) { viewkind("2"); e.preventDefault(); });     
+    $("li#3").click(function(e) { viewkind("3"); e.preventDefault(); });    
+    $("li#4").click(function(e) { viewkind("4"); e.preventDefault(); });    
+    $("li#5").click(function(e) { viewkind("5"); e.preventDefault(); });    
+    $("li#6").click(function(e) { viewkind("6"); e.preventDefault(); });    
+    $("li#7").click(function(e) { viewkind("7"); e.preventDefault(); });    
+    $("li#8").click(function(e) { viewkind("8"); e.preventDefault(); });               
+    $("li#9").click(function(e) { viewkind("9"); e.preventDefault(); });
+    $("li#10").click(function(e) { menu(); e.preventDefault(); });          
+          
+    var viewkind = function ViewKind(id) {
+        $.ajax({
+            url:rootURL + '/kind',
+            type: 'POST',  
+            data: id,
+            dataType:"json",
+            contentType: "text/plain",
+            success: function(data) {
+                $("div#menu1").empty();
+                $("div#menu1").append('<table width="450">');
+                for(var i = 0; i < data.length; i++){
+                    $("div#menu1").append('<tr><td valign="middle" width="200"><img src="' + data[i].image + '" width="190"></td><br><td valign="middle" width="200"><p><i>' + data[i].food +
+                        '</i><br><br>' + data[i].dose + '<br>' + data[i].cost + ' руб.<br><br>' +
+                        data[i].consist + '</p></td><td valign="middle" width="50"><a href="#"><input type="image" src="images/bask.png" onclick="add(' + data[i].idFood + ')" width="45"></a></td></tr><tr><td valign="middle" width="450"><p>*  *  *  *  *</p></td></tr>');
+                }
+                $("div#menu1").append('</table>');  
+            }
+        });
+    }; 
+    
+    function add(id) {        
+        var str = String(id) + "," + String($('input[name="' + id + '"]').val());
+        $.ajax({
+            url:rootURL + '/add',
+            type: 'POST',  
+            data: String(str), 
+            contentType: "text/plain",
+            success: function(data) {
+                $('input[name="' + id + '"]').val('');
+            }
+        });
+    }; 
+   
+   var showbask = function ShowBasket() {
+        $(function(){        
+            $.getJSON(rootURL + '/showbasket', function(data) { 
+                $("div#basket1").empty();
+                $("div#basket1").append('<table width="400">');                
+                for(var i = 0; i < data.length; i++){
+                   $("div#basket1").append('<tr><td valign="middle" width="400"><p align="center"><i>' + data[i].food +
+                   '</i>, ' + data[i].cost + ' руб.</td></tr>');
+                }
+                $("div#basket1").append('</table>');
+                var cost = 0;
+                for(var i = 0; i < data.length; i++){
+                    cost = cost + data[i].cost;   
+                    sum = String(cost);
+                }
+                sum = String(cost);
+                $('div#basket2').append('<p>Стоимость ' + cost + ' руб.</p><br><br>');
+            });
+        });  
+   }
+        
+        var menu = function ViewMenu() {
+        $(function(){ 
+            $.getJSON(rootURL + '/getmenu', function(data) {
+                $("div#menu1").empty();
+                $("div#menu1").append('<table width="450">');
+                for(var i = 0; i < data.length; i++){
+                    $("div#menu1").append('<tr><td valign="middle" width="200"><img src="' + data[i].image + '" width="190"></td><br><td valign="middle" width="200"><p><i>' + data[i].food +
+                            '</i><br><br>' + data[i].dose + '<br>' + data[i].cost + ' руб.<br><br>' +
+                            data[i].consist + '</p></td><td valign="middle" width="50"><input type="text" name="' + data[i].idFood + '" size="3">шт.<br><a href="#"><input type="image" src="images/bask.png" onclick="add(' 
+                            + data[i].idFood + ')" width="45"></a></td></tr><tr><td valign="middle" width="450"><p align="center">*  *  *  *  *</p></td></tr>');
+                }
+                $("div#menu1").append('</table>');
+            });
+        });
+    };
+   
+   var idBask = function ViewIdBasket() {
+        $(function(){
+            $.getJSON(rootURL + '/getid', function(data)
+            { 
+                $('#basket3').append('<table id="tabl">');
+                $('#tabl').append('<tr><td valign="top"></td></tr>');
+                for(var i = 0; i < data.length; i++){
+                $('#tabl').append('<tr><td valign="top"><a href="#"><input type="image" src="images/delete.png" width="20" onclick="del(' 
+                            + data[i].idBasket + ')" width="45"></a></td></tr>');                   
+            }
+            $('#basket3').append('</table>');
+            });
+        });
+    };
+    
+    $("button#day").bind("click",function() {
+        $.getJSON(rootURL + '/table', function(data) {
+            $("div#kalend").empty();
+            $("div#kalend").append('<table width="350">');            
+            for(var i = 0; i < data.length; i++){
+                $("div#kalend").append('<tr><td border="2" valign="middle" width="100"><i>' + data[i].idTable +
+                            '-й столик </i></td><td border="2" width="100" valign="middle"> ' + data[i].number 
+                            + ' мест<br><td valign="middle" width="150"><button type="button" onclick="table(' 
+                            + data[i].idTable + ')">Зарезервировать</button></td></tr>');                        
+            }
+            $("div#kalend").append('</table>');
+        });
+    });
+       
+    function del(idDel) {
+        var id = String(idDel);
+        $.ajax({
+            url: rootURL + '/delete',
+            type: 'POST',
+            data: id,     
+            contentType:"text/plain",
+            success: function (data) { 
+            },
+        }); 
+        $("div#basket1").empty();  
+        $("div#basket2").empty();
+        $("div#basket3").empty();
+        showbask();
+        idBask();
+        $("div#basket1").show();  
+        $("div#basket2").show();
+        $("div#basket3").show();
+    }
+    
+    function table(id) {
+        idT = String(id);
+        date = $('input[name="datamine"]').val();
+        time = $('input[name="time"]').val();
+        $("div#tablepage").hide();
+        $("div#okpage").show();
+    }
+    
+    var ok = function Order() {
+        var str = idT + "," + String($('input[name="surname"]').val()) +"," + String($('input[name="name"]').val()) 
+                + "," + String($('input[name="patr"]').val()) + "," + String($('input[name="tel"]').val()) + "," 
+                + date + "," + time + "," + sum;
+                alert(str);
+                var s = String(str);
+                $("div#orderpage").hide();
+                $("div#okorder").show();
+        $.ajax({
+            url: rootURL + '/order',
+            type: 'POST',
+            data: i,     
+            contentType:"text/plain",
+            success: function (res) { 
+                $("div#orderpage").hide();
+                $("div#okorder").show();
+                $("div#basket3").hide();
+                $("div#menu1").hide();
+            }
+        });
+    };       
+            
+        </script>
+    </body>
+</html>

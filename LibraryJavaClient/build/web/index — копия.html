@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Электронная библиотека книг</title>
+        <link rel="stylesheet" type="text/css" href="css/style.css" />
+        
+        <link href="/css/ui-lightness/jquery-ui-1.9.2.custom.css" rel="stylesheet" type="text/css" />
+        <script src="/js/jquery-1.8.3.js" type="text/javascript"></script>
+        <script src="/js/jquery-ui-1.9.2.custom.min.js" type="text/javascript"></script>
+        
+             
+        <script>
+            function disp(form) {
+                if (form.style.display == "none" && dialog.style.display == "none") {
+                    form.style.display = "block";
+                    dialog.style.display = "block";
+                    
+                } else {
+                    form.style.display = "none";
+                    dialog.style.display = "none";
+                }
+            }
+        </script>
+    </head>
+       
+    
+    <body>
+        <div id="main">
+            <div id="top">
+                <div id="text">
+                    <p>Книга — чистейшая сущность человеческой души. 
+                        © Карлейль</p>
+                </div>
+                <div id="enter">
+                    <a href="#" onclick="disp(document.getElementById('form'))">Вход / Регистрация</a>
+                    <div id="dialog" style="display: none;">
+                        <form id="form" style="display: none;">
+                            <p>Логин</p><input type="text" placeholder="Логин"><br>
+                            <p>Пароль</p><input type="text" placeholder="Пароль"><br>
+                            <input type="submit" value="Войти">
+                            <a href="#">Регистрация</a>                        
+                        </form>
+                    </div>                    
+                </div>
+                <div id="head">
+                    <p>ЭЛЕКТРОННАЯ БИБЛИОТЕКА КНИГ</p>
+                </div>
+                <div id="link">
+                    <a href>Жанры</a>
+                    <a href>Авторы</a>
+                    <a href>Книги</a>
+                </div>
+                <div id="search">
+                    <input type="text" name="search" placeholder="Введите название книги">
+                    <input type="submit" value="Найти">
+                </div>
+            </div>
+            <div id="middle">
+                <div id="books">
+                    <h2 align ="center"><i>Книги</i></h2>
+                    <table class="" width="750">
+                        <c:forEach items="${requestScope.books}" var="value">                        
+                            <tr>
+                                <td width="370" align="left"><i>${value.name_genre}</i></td>
+                            </tr>
+                        </c:forEach>
+                    </table>     
+            </div>
+        </div>
+            </div>
+            <div id="bottom">
+                <p>Минск, 2016</p>
+            </div>
+        </div>
+        
+    </body>
+</html>
+
+
+  
